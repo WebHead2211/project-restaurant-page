@@ -7,7 +7,7 @@ body {
 #content {
     display: flex;
     flex-direction: column;
-    background: url(../src/restaurant.jpg);
+    background: url(./restaurant.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;

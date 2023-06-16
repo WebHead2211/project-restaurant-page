@@ -3,7 +3,7 @@ export default function menuItem(name, description, image, price) {
     item.classList.add('menu-item');
     
     const itemImage = document.createElement('img');
-    itemImage.setAttribute('src', `../src/menu-images/${image}`);
+    itemImage.setAttribute('src', `./menu-images/${image}`);
     itemImage.classList.add('menu-item-image');
 
     const imageContainer = document.createElement('div');
@@ -19,10 +19,6 @@ export default function menuItem(name, description, image, price) {
 
     const itemPrice = document.createElement('h3');
     itemPrice.classList.add('item-price');
-    // itemPrice.style.position = 'absolute';
-    // itemPrice.style.bottom = '10px';
-    // itemPrice.style.left = '10px';
-    // itemPrice.style.marginTop = '10px';
     itemPrice.textContent = `Rs. ${price}`;
 
     item.appendChild(imageContainer);
