@@ -1,21 +1,40 @@
-import changeColor from './print.js';
-import createHomePage from './homepage.js';
+import createHomePage from './home-page.js';
+import { resetMain } from './home-page.js';
+import createMenuPage from './menu-page.js';
+import { createList } from './home-page.js';
+import { createFooter } from './home-page.js';
+import createContactPage from './contact-page.js';
 
-function component() {
-    // const element = document.createElement('div');
-    // const heading = document.createElement('h1');
-    // const btn = document.createElement('button');
-    // heading.textContent = 'Hey';
-    // btn.textContent = 'Change text color';
-    // element.appendChild(heading);
-    // element.appendChild(btn);
-    // btn.onclick = changeColor;
+function component(element) {
+    const header = document.createElement('div');
+    const main = document.createElement('div');
+    const footer = document.createElement('div');
+    header.setAttribute('class', 'header');
+    main.setAttribute('class', 'main');
+    footer.setAttribute('class', 'footer');
+    
+    header.classList.add('main-page');
+    main.classList.add('main-page');
+    footer.classList.add('main-page');
+    
+    element.appendChild(header);
+    element.appendChild(main);
+    element.appendChild(footer);
 
-    // btn.onclick = changeColor;
+    const list = createList();
+    header.appendChild(list);
 
-    // return element;
+    const footerDiv = createFooter();
+    footer.appendChild(footerDiv);
 
-  }
-  
-  createHomePage(document.querySelector('#content'));
-  
+}
+
+component(document.querySelector('#content'));
+createHomePage(document.querySelector('.main'));
+const navHome = document.getElementById('home');
+const navMenu = document.getElementById('menu');
+const navContact = document.getElementById('contact');
+
+navHome.addEventListener('click', resetMain);
+navMenu.addEventListener('click', createMenuPage);
+navContact.addEventListener('click', createContactPage);
